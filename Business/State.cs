@@ -8,7 +8,7 @@ namespace Business
     abstract class State
     {
         public User user;
-        private int karmaPoints;
+        protected int karmaPoints;
 
         public int lowerLimit;
         public int upperLimit;

@@ -9,8 +9,11 @@ namespace Business
     class UserManagement
     {
         User user = new User();
+        private State _state;
+        private string _user;
         UserRepository userRep = new UserRepository();
 
+        
         public void AddUser(string username, string firstName, string lastName)
         {
             user.EntityId = new Guid();
