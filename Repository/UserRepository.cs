@@ -11,5 +11,15 @@ namespace Repository
         {
             throw new NotImplementedException();
         }
+
+        public void EditUser(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteUser(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

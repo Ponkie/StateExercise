@@ -9,15 +9,40 @@ namespace Business
     class UserManagement
     {
         User user = new User();
+        UserRepository userRep = new UserRepository();
 
         public void AddUser(string username, string firstName, string lastName)
         {
-            UserRepository userRep = new UserRepository();
             user.EntityId = new Guid();
+            user.Username = username;
             user.FirstName = firstName;
             user.LastName = lastName;
 
             userRep.AddUser(user);
+        }
+
+        public void EditUser(string username)
+        {
+            user.Username = username;
+
+            userRep.EditUser(user); 
+        }
+
+        public void DeleteUser(string username)
+        {
+            user.Username = username;
+
+            userRep.DeleteUser(user); 
+        }
+
+        public void ShowUser(List<User> user)
+        {
+            foreach (var list in user)
+                {
+                Console.WriteLine("==================");
+                Console.WriteLine(user);
+                Console.WriteLine("==================");
+                }
         }
 
     }
