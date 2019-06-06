@@ -23,14 +23,14 @@ namespace Business
         public override void LikePost()
         {
             karmaPoints += (int)Karma.NoobPoints;
-            StateChecker.NoobStateChecker(karmaPoints, (int)Limits.NoobUpperLimit, (int)Limits.NoobLowerLimit, user, this);
+            StateChecker.StateCheck(karmaPoints, (int)Limits.NoobUpperLimit, (int)Limits.NoobLowerLimit, user, this);
         }
 
 
         public override void DislikePost()
         {
             karmaPoints -= (int)Karma.NoobPoints;
-            StateChecker.NoobStateChecker(karmaPoints, (int)Limits.NoobUpperLimit, (int)Limits.NoobLowerLimit, user, this);
+            StateChecker.StateCheck(karmaPoints, (int)Limits.NoobUpperLimit, (int)Limits.NoobLowerLimit, user, this);
         }
 
     

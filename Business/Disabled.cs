@@ -22,17 +22,11 @@ namespace Business
 
         public override void LikePost()
         {
-            StateChangeCheck();
         }
 
         public override void DislikePost()
         {
-            StateChangeCheck();
         }
 
-        private void StateChangeCheck()
-        {
-
-        }
     }
 }
