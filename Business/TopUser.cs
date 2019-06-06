@@ -4,6 +4,7 @@ namespace Business
 {
     class TopUser : State
     {
+
         public TopUser(State state)
         {
             this.KarmaPoints = state.KarmaPoints;
@@ -15,25 +16,23 @@ namespace Business
             this.user = user;
         }
 
+        public TopUser()
+        {
+        }
+
         public override void LikePost()
         {
             karmaPoints += (int)Karma.TopUserPoints;
-            StateChangeCheck();
+            StateChecker.TopUserStateChecker(karmaPoints, (int)Limits.TopUserUpperLimit, (int)Limits.TopUserLowerLimit, user, this);
         }
 
 
         public override void DislikePost()
         {
             karmaPoints -= (int)Karma.TopUserPoints;
-            StateChangeCheck();
+            StateChecker.TopUserStateChecker(karmaPoints, (int)Limits.TopUserUpperLimit, (int)Limits.TopUserLowerLimit, user, this);
         }
 
-        public void StateChangeCheck()
-        {
-            if (KarmaPoints < (int)Limits.TopUserLowerLimit)
-            {
-                user.State = new Normie(this);
-            }
-        }
+   
     }
 }
