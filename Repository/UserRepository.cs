@@ -7,7 +7,7 @@ namespace Repository
 {
     public class UserRepository
     {
-        public void AddUser(User user)
+        public User AddUser(User user)
         {
             throw new NotImplementedException();
         }

@@ -6,14 +6,14 @@ using Repository;
 
 namespace Business
 {
-    class UserManagement
+    public class UserManagement
     {
         User user = new User();
         private State _state;
         private string _user;
         UserRepository userRep = new UserRepository();
 
-        
+
         public void AddUser(string username, string firstName, string lastName)
         {
             user.EntityId = new Guid();
@@ -21,7 +21,6 @@ namespace Business
             user.FirstName = firstName;
             user.LastName = lastName;
 
-            userRep.AddUser(user);
         }
 
         public void EditUser(string username)
@@ -42,9 +41,9 @@ namespace Business
         {
             foreach (var list in user)
                 {
-                Console.WriteLine("==================");
-                Console.WriteLine(user);
-                Console.WriteLine("==================");
+                //Console.WriteLine("==================");
+                //Console.WriteLine(user);
+                //Console.WriteLine("==================");
                 }
         }
 
