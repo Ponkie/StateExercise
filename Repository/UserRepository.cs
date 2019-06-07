@@ -7,9 +7,22 @@ namespace Repository
 {
     public class UserRepository
     {
-        public User AddUser(User user)
+        public List<User> UserList = new List<User>()
         {
-            throw new NotImplementedException();
+            new User
+            {
+                EntityId = new Guid(),
+                Username = "Ponkie",
+                FirstName = "Dino Angelo",
+                LastName = "Reyes"
+            }
+        };
+            
+  
+
+        public void AddUser(User user)
+        {
+            UserList.Add(user);
         }
 
         public void EditUser(User user)

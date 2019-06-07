@@ -19,7 +19,6 @@ namespace Business
         public TopUser()
         {
         }
-
         public override void LikePost()
         {
             karmaPoints += (int)Karma.TopUserPoints;

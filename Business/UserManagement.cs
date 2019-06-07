@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Entity;
+﻿using Entity;
 using Repository;
+using System;
+using System.Collections.Generic;
 
 namespace Business
 {
@@ -16,35 +15,39 @@ namespace Business
 
         public void AddUser(string username, string firstName, string lastName)
         {
-            user.EntityId = new Guid();
-            user.Username = username;
-            user.FirstName = firstName;
-            user.LastName = lastName;
+            User user = new User
+            {
+                EntityId = new Guid(),
+                Username = username,
+                FirstName = firstName,
+                LastName = lastName,
+            };
 
+            userRep.AddUser(user);
         }
 
         public void EditUser(string username)
         {
             user.Username = username;
 
-            userRep.EditUser(user); 
+            userRep.EditUser(user);
         }
 
         public void DeleteUser(string username)
         {
             user.Username = username;
 
-            userRep.DeleteUser(user); 
+            userRep.DeleteUser(user);
         }
 
         public void ShowUser(List<User> user)
         {
             foreach (var list in user)
-                {
-                //Console.WriteLine("==================");
-                //Console.WriteLine(user);
-                //Console.WriteLine("==================");
-                }
+            {
+                Console.WriteLine("==================");
+                Console.WriteLine(user);
+                Console.WriteLine("==================");
+            }
         }
 
     }
